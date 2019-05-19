@@ -1,0 +1,80 @@
+@import '../../../styles/abstracts/variables';
+
+.default-val {
+  position: relative;
+  &__grab {
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    background-color: #d8d8d8;
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    transition: left 0.3s ease-out;
+    transform: translateX(-6px);
+    top: -27px;
+  }
+}
+
+.input-range {
+  padding: 40px 0;
+  margin: 0 10px;
+  &__label {
+    white-space: unset;
+    &--min,
+    &--max {
+      display: none;
+    }
+    &--value {
+      top: -40px;
+    }
+  }
+  &__slider {
+    height: 15px;
+    width: 15px;
+    margin-top: -10px;
+    background-color: $linkColor;
+    border: 1px solid $linkColor;
+  }
+  &__track {
+    &--active {
+      background: $linkColor;
+      &::after {
+        content: '';
+        width: 12px;
+        height: 100%;
+        background-color: $white;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  &__label-container {
+    color: $black;
+    bottom: 14px;
+    font-size: 18px;
+  }
+}
+.tooltip {
+  display: flex;
+  flex-direction: column;
+  &__unit {
+    font-size: 13px;
+  }
+}
+
+//mobile ranges
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .input-range__slider-container {
+    transition: none;
+  }
+  .input-range__slider-container {
+    transition: none;
+  }
+  .input-range__slider {
+    height: 20px;
+    width: 20px;
+    margin-top: -12px;
+  }
+}

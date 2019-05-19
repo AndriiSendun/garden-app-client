@@ -1,0 +1,56 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/base/animations';
+
+.confirm {
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  animation: expand 0.3s ease-in-out;
+  .confirm-modal {
+    text-align: center;
+    position: fixed;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 90%;
+    min-height: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    &__title {
+      margin: 0;
+    }
+    &__btns {
+      display: flex;
+    }
+  }
+}
+
+.confirm-remove,
+.reject-remove {
+  background-clip: unset;
+  border: none;
+  margin: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .confirm-modal {
+    max-width: 50%;
+    &__flower-name {
+      padding: 0 0 40px 0;
+    }
+    &__title {
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+}

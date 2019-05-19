@@ -1,0 +1,135 @@
+@import '../../styles/abstracts/variables';
+
+.flower-details {
+  font-family: 'Roboto', sans-serif;
+  padding: 0 20px;
+  &__name {
+    position: relative;
+  }
+  &__main {
+    &--thumbnail {
+      margin: 0;
+      .thumb {
+        max-width: 100%;
+      }
+    }
+    &--connection-status {
+      color: $connect-error;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      position: absolute;
+    }
+
+    &--issue {
+      color: $connect-error;
+      font-size: 24px;
+      font-weight: 100;
+      margin-left: 10px;
+      position: absolute;
+      top: 2px;
+    }
+  }
+  &__information__info {
+    &--type,
+    &--birth {
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    &--totaldays {
+      color: $cancel-btn;
+      margin-left: 10px;
+    }
+  }
+  &__scales {
+    &--title {
+      margin-bottom: 10px;
+      margin-top: 50px;
+    }
+  }
+
+  &__problems {
+    &--title {
+      margin-bottom: 0;
+      margin-top: 50px;
+    }
+    &--list {
+      list-style: none;
+      padding: 0;
+      .problem {
+        font-size: 14px;
+        padding: 8px 0;
+      }
+    }
+  }
+}
+
+.scales {
+  font-size: 12px;
+  color: #333333;
+
+  &__tooltip {
+    padding: 5px 0;
+    display: block;
+  }
+
+  &__scales-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    &--value {
+      margin: 0 10px;
+    }
+    &--soil {
+      background-color: $soil-water;
+      height: 5px;
+      border-radius: 10px;
+      transition: width 0.5s;
+    }
+    &--airhumidity {
+      background-color: $humidity;
+      height: 5px;
+      border-radius: 10px;
+      transition: width 0.5s;
+    }
+    &--temperature {
+      background-color: $temperature;
+      height: 5px;
+      border-radius: 10px;
+      transition: width 0.5s;
+    }
+    &--light {
+      background-color: $light;
+      height: 5px;
+      border-radius: 10px;
+      transition: width 0.5s;
+    }
+  }
+}
+
+.noconnected-message {
+  margin-left: 10px;
+}
+
+.charts {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .flower-details {
+    max-width: 80%;
+    margin: 0 auto;
+    &__main {
+      &--thumbnail {
+        max-width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .btn--edit.btn {
+    text-align: center;
+    font-size: 20px;
+  }
+}

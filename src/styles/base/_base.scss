@@ -1,0 +1,62 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $body-bg;
+  margin: 0;
+}
+
+.arrow-back {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .page-title {
+    text-align: center;
+  }
+}
+
+.Toastify__toast.Toastify__toast--default {
+  color: $font-black;
+  color: #333;
+  border: 5px solid $focus;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+.__react_component_tooltip {
+  font-size: 12px;
+  max-width: 50%;
+  padding: 8px 10px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+
+  }
+}

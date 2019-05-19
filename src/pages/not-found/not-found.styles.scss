@@ -1,0 +1,13 @@
+@import '../../styles/abstracts/variables';
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+
+  &__description {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,92 @@
+@import '../../styles/abstracts/variables';
+
+.btn--primary.btn {
+  font-weight: bold;
+}
+.create-flower {
+  color: $authorizationLabel;
+  padding: 0 20px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.form__group {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: $font-black;
+  }
+  &-description {
+    color: $description;
+    margin: 8px 0;
+  }
+  &--error {
+    color: $danger;
+  }
+}
+.form__controls {
+  max-width: 100%;
+  margin: 0 auto;
+  .sensor {
+    color: $input-placeholder;
+  }
+  .no-sensor {
+    color: $input-bg;
+  }
+}
+.button__cancel {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  margin: 10px auto;
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+  color: $cancel-btn;
+  font-weight: 900;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+.delete-flower {
+  margin-top: 20px;
+  background-clip: unset;
+  border: none;
+}
+.reject-remove {
+  background: transparent;
+  color: $cancel-btn;
+  border: 1px solid $input-placeholder;
+}
+@media screen and (min-width: 768px) {
+  .create-flower {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .form__controls {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .Toastify__toast-container {
+    width: 100%;
+  }
+  .form__controls {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+  .input-range {
+    margin: 0;
+  }
+  .default-val__grab {
+    margin-left: 0;
+  }
+}

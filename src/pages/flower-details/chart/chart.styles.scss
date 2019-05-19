@@ -1,0 +1,158 @@
+@import '../../../styles/abstracts/variables';
+
+.line {
+  stroke-width: 3;
+}
+
+.chart-input {
+  font-size: 1rem;
+  color: #333;
+  background: $input-bg;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  margin-top: 15px;
+}
+
+h2[class$='chart__title'] {
+  margin-bottom: 0;
+}
+
+.focus {
+  stroke: #fff;
+}
+
+.hover-line {
+  stroke-width: 2px;
+  stroke-dasharray: 3, 3;
+}
+
+.axis {
+  color: #666;
+  stroke-width: 0.2;
+}
+
+.tick line {
+  stroke: $ticksColor;
+}
+
+.water-chart {
+  &__container {
+    .start {
+      stop-color: $waterChartGradientStart;
+    }
+
+    .stop {
+      stop-color: $waterChartGradientEnd;
+    }
+  }
+
+  &__path {
+    stroke: $waterChartStrokeColor;
+  }
+
+
+  .hover-line {
+    stroke: $waterChartStrokeColor
+  }
+
+  .focus-circle {
+    fill: $waterChartDotColor;
+  }
+}
+
+.water-tip,
+.air-tip,
+.temperature-tip {
+  &__rect {
+    width: 140px;
+    height: 30px;
+  }
+
+  &__text {
+    stroke-width: 0;
+    font-size: 0.9rem;
+  }
+}
+.temperature-chart {
+  &__container {
+    .start {
+      stop-color: $temperatureChartGradientStart;
+    }
+
+    .stop {
+      stop-color: $temperatureChartGradientEnd;
+    }
+  }
+
+  &__path {
+    stroke: $temperatureChartStrokeColor;
+  }
+
+  .hover-line {
+    stroke: $temperatureChartStrokeColor
+  }
+
+  .focus-circle {
+    fill: $temperatureChartDotColor;
+  }
+}
+
+.air-chart {
+  &__container {
+    .start {
+      stop-color: $airChartGradientStart;
+    }
+
+    .stop {
+      stop-color: $airChartGradientEnd;
+    }
+  }
+
+  &__path {
+    stroke: $airChartStrokeColor;
+  }
+
+  .hover-line {
+    stroke: $airChartStrokeColor
+  }
+
+  .focus-circle {
+    fill: $airChartDotColor;
+  }
+}
+
+.svg-box {
+  min-width: 290px;
+  max-width: 800px;
+}
+
+.charts {
+  padding: 0 20px;
+}
+
+.error-chart {
+  max-width: 100%;
+  display: flex;
+  padding: 50px 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background: rgb(231, 231, 231)
+}
+
+.error-chart__title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #666;
+/*   color: $chartWarningText; */
+
+  .material-icons--warning {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+}

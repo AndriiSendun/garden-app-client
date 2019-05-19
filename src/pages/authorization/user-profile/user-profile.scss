@@ -1,0 +1,48 @@
+@import '../../../styles/abstracts/variables';
+
+.authorization--form {
+  max-width: 360px;
+  clear: both;
+  margin: 20px 0;
+
+  &__description {
+    font-size: 0.8rem;
+    padding-left: 10px;
+  }
+
+  .btn {
+    float: right;
+    width: auto;
+    padding: 10px 20px;
+    font-weight: 300;
+
+    &--primary {
+      background: $focus;
+
+      &:focus {
+        background: $primary;
+      }
+
+      &:disabled {
+        background-color: $silver;
+      }
+    }
+  }
+}
+
+.authorization--update {
+  display: flex;
+  flex-direction: column;
+
+  .authorization--form {
+    position: relative;
+    .error-message {
+      bottom: 38px;
+      width: 100%
+    }
+  }
+}
+
+.form-control__error {
+  position: relative;
+}
