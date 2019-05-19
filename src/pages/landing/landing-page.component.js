@@ -184,7 +184,7 @@ class Landing extends React.Component {
           </article>
         </main>
         <footer className="landing-footer">
-          <Link className="landing-footer__trybtn" to="/#home">
+          <Link className="landing-footer__trybtn" to="/home">
             Try now
           </Link>
           <div className="landing-footer__copyright">
