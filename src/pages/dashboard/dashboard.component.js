@@ -96,7 +96,6 @@ class Dashboard extends React.Component {
       };
     });
   };
-
   sortByProblems = () => {
     this.setState(({ flowers, isProblematicSort }) => {
       const problematicFlowers = flowers.reduce((problematic, current) => {
@@ -108,7 +107,7 @@ class Dashboard extends React.Component {
             }
           });
 
-        return problematic;
+        return problematic.filter((item, i, self) => self.indexOf(item) === i);
       }, []);
 
       return {
