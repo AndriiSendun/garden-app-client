@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { push } from "connected-react-router";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
 
-import Header from "../../../common/header/header.component";
-import CustomLink from "../../../common/components/custom-link/custom-link.component";
+import Header from '../../../common/header/header.component';
+import CustomLink from '../../../common/components/custom-link/custom-link.component';
 
-import { falseRegistered, clearMessage } from "../authorization.action";
-import routes from "../../../constants/routes";
+import { falseRegistered, clearMessage } from '../authorization.action';
+import routes from '../../../constants/routes';
 
-import "./sign-up-success.styles.scss";
+import './sign-up-success.styles.scss';
 
 class SignUpSuccess extends Component {
   componentWillMount() {
@@ -23,15 +23,15 @@ class SignUpSuccess extends Component {
     return (
       <>
         <Header />
-        <div className="sign-up-success">
-          <h2 className="sign-up-success__title">Success!</h2>
-          <div className="sign-up-success__description">
+        <div className='sign-up-success'>
+          <h2 className='sign-up-success__title'>Success!</h2>
+          <div className='sign-up-success__description'>
             <div>
-              Your account has been successfully created. Now you are able to
-              login in the app.
+              Your account has been successfully created. Now you can log in to
+              the app.
             </div>
             <CustomLink
-              title="Go to login"
+              title='Go to login'
               onClick={() => {
                 this.props.clearMessage();
                 this.props.push(routes.logIn);

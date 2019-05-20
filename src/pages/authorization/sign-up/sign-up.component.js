@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Field, reduxForm } from "redux-form";
-import { push } from "connected-react-router";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import { push } from 'connected-react-router';
 
 import {
   register,
   clearMessage,
   falseRegistered
-} from "../authorization.action";
+} from '../authorization.action';
 
 import {
   requirePassword,
@@ -18,23 +18,23 @@ import {
   minLength6,
   passwordsMatch,
   repeatPassword
-} from "./sign-up.validation";
+} from './sign-up.validation';
 
-import asyncValidate from "./sign-up.async-validation";
+import asyncValidate from './sign-up.async-validation';
 
 import {
   Button,
   TYPES
-} from "../../../common/components/button/button.component";
-import Input from "../../../common/components/input/input.component";
-import Header from "../../../common/header/header.component";
-import CustomLink from "../../../common/components/custom-link/custom-link.component";
-import PageTitle from "./../../../common/page-title/page-title.component";
-import Spinner from "./../../../common/components/spinner/spinner.component";
+} from '../../../common/components/button/button.component';
+import Input from '../../../common/components/input/input.component';
+import Header from '../../../common/header/header.component';
+import CustomLink from '../../../common/components/custom-link/custom-link.component';
+import PageTitle from './../../../common/page-title/page-title.component';
+import Spinner from './../../../common/components/spinner/spinner.component';
 
-import routes from "../../../constants/routes";
+import routes from '../../../constants/routes';
 
-import "./sign-up.styles.scss";
+import './sign-up.styles.scss';
 
 class SignUp extends Component {
   onSubmit({ name, email, password }) {
@@ -54,54 +54,54 @@ class SignUp extends Component {
       <>
         {this.props.isLoading ? <Spinner /> : null}
         <Header />
-        <PageTitle title="Register to Cyander" />
-        <div className="authorization authorization--sign-up">
+        <PageTitle title='Register to Flove.it' />
+        <div className='authorization authorization--sign-up'>
           <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             <Field
-              name="name"
-              type="text"
+              name='name'
+              type='text'
               component={Input}
-              label="User name"
-              placeholder="User name"
+              label='User name'
+              placeholder='User name'
               validate={[requireUserName, maxLength15]}
             />
             <Field
-              name="email"
-              type="email"
+              name='email'
+              type='email'
               component={Input}
-              label="Email"
-              placeholder="Email"
+              label='Email'
+              placeholder='Email'
               validate={[email, requireEmail]}
             />
             <Field
-              name="password"
-              type="password"
+              name='password'
+              type='password'
               component={Input}
-              label="Password"
-              placeholder="Password"
+              label='Password'
+              placeholder='Password'
               validate={[requirePassword, minLength6]}
             />
             <Field
-              name="repeat-password"
-              type="password"
+              name='repeat-password'
+              type='password'
               component={Input}
-              label="Repeat password"
-              placeholder="Repeat password"
+              label='Repeat password'
+              placeholder='Repeat password'
               validate={[repeatPassword, passwordsMatch]}
             />
-            {error && <div className="error-message">{error}</div>}
+            {error && <div className='error-message'>{error}</div>}
             <Button
-              title="SIGN UP"
-              type="submit"
+              title='SIGN UP'
+              type='submit'
               buttonType={TYPES.PRIMARY}
               disabled={!valid || submitting}
             />
           </form>
-          <div className="authorization__helper">
+          <div className='authorization__helper'>
             <span>Have an account?</span>
             <CustomLink
-              additionalClass="link--sign-up"
-              title="Login"
+              additionalClass='link--sign-up'
+              title='Login'
               onClick={() => {
                 this.props.push(routes.logIn);
                 this.props.clearMessage();
@@ -120,9 +120,9 @@ const mapStateToProps = state => ({
 });
 
 SignUp = reduxForm({
-  form: "signUp",
+  form: 'signUp',
   asyncValidate,
-  asyncBlurFields: ["email"]
+  asyncBlurFields: ['email']
 })(SignUp);
 
 export default connect(

@@ -77,6 +77,10 @@
       font-weight: 600;
     }
 
+    &__label {
+      cursor: pointer;
+    }
+
     &__button {
       border: none;
       border-radius: 5px;
