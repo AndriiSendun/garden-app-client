@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 
-import Header from '../../../common/header/header.component';
+import PageTitle from './../../../common/page-title/page-title.component';
 import CustomLink from '../../../common/components/custom-link/custom-link.component';
 
 import { falseRegistered, clearMessage } from '../authorization.action';
@@ -22,9 +22,9 @@ class SignUpSuccess extends Component {
   render() {
     return (
       <>
-        <Header />
+        <header className="header"></header>
+        <PageTitle title="Success!"/>
         <div className='sign-up-success'>
-          <h2 className='sign-up-success__title'>Success!</h2>
           <div className='sign-up-success__description'>
             <div>
               Your account has been successfully created. Now you can log in to
