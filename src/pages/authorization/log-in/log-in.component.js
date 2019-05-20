@@ -66,7 +66,7 @@ class LogIn extends Component {
             />
           </form>
           <div className='authorization__helper'>
-            <span>New to Cyander?</span>
+            <span>New to F[love].it?</span>
             <CustomLink
               additionalClass='link--log-in'
               title='Sign up'
