@@ -54,6 +54,7 @@ class Chart extends Component {
           <h2 className={`${this.props.selector}-chart__title`}>
             {this.props.title}
           </h2>
+
           <input
             ref={node => (this.datepicker = node)}
             type="date"
