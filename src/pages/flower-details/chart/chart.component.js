@@ -60,6 +60,7 @@ class Chart extends Component {
             name="date"
             id="date"
             className="chart-input"
+            placeholder="dd/mm/yyyy"
             onChange={this.pickDate.bind(this)}
           />
           <div className="svg-box">
