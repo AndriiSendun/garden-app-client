@@ -1,24 +1,24 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Field, reduxForm } from "redux-form";
-import { push } from "connected-react-router";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import { push } from 'connected-react-router';
 
-import { logIn, clearMessage } from "../authorization.action";
-import { requirePassword, email, requireEmail } from "./log-in.validation";
+import { logIn, clearMessage } from '../authorization.action';
+import { requirePassword, email, requireEmail } from './log-in.validation';
 
 import {
   Button,
   TYPES
-} from "../../../common/components/button/button.component";
-import Input from "../../../common/components/input/input.component";
-import Header from "../../../common/header/header.component";
-import CustomLink from "../../../common/components/custom-link/custom-link.component";
-import PageTitle from "./../../../common/page-title/page-title.component";
-import Spinner from "./../../../common/components/spinner/spinner.component";
+} from '../../../common/components/button/button.component';
+import Input from '../../../common/components/input/input.component';
+import Header from '../../../common/header/header.component';
+import CustomLink from '../../../common/components/custom-link/custom-link.component';
+import PageTitle from './../../../common/page-title/page-title.component';
+import Spinner from './../../../common/components/spinner/spinner.component';
 
-import routes from "../../../constants/routes";
+import routes from '../../../constants/routes';
 
-import "./log-in.styles.scss";
+import './log-in.styles.scss';
 
 class LogIn extends Component {
   onSubmit({ email, password }) {
@@ -38,38 +38,38 @@ class LogIn extends Component {
       <>
         {this.props.isLoading ? <Spinner /> : null}
         <Header />
-        <PageTitle title="Login to Cyander" />
-        <div className="authorization authorization--log-in">
+        <PageTitle title='Login to Flove.It' />
+        <div className='authorization authorization--log-in'>
           <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             <Field
-              name="email"
-              type="email"
+              name='email'
+              type='email'
               component={Input}
-              label="Email address"
-              placeholder="Email"
+              label='Email address'
+              placeholder='Email'
               validate={[requireEmail, email]}
             />
             <Field
-              name="password"
-              type="password"
+              name='password'
+              type='password'
               component={Input}
-              label="Password"
-              placeholder="Password"
+              label='Password'
+              placeholder='Password'
               validate={requirePassword}
             />
-            {error && <div className="error-message">{error}</div>}
+            {error && <div className='error-message'>{error}</div>}
             <Button
-              title="SIGN IN"
-              type="submit"
+              title='LOG IN'
+              type='submit'
               buttonType={TYPES.PRIMARY}
               disabled={!valid || submitting}
             />
           </form>
-          <div className="authorization__helper">
+          <div className='authorization__helper'>
             <span>New to Cyander?</span>
             <CustomLink
-              additionalClass="link--log-in"
-              title="Sign up"
+              additionalClass='link--log-in'
+              title='Sign up'
               onClick={() => {
                 this.props.push(routes.signUp);
                 this.props.clearMessage();
@@ -88,7 +88,7 @@ const mapStateToProps = state => ({
 });
 
 LogIn = reduxForm({
-  form: "logIn"
+  form: 'logIn'
 })(LogIn);
 
 export default connect(
