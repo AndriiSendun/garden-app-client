@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { fetchSensors } from "../../common/sensors/sensors.middleware";
-import FlowerThumbnail from "../flower-thumbnail/flower-thumbnail";
+import { fetchSensors } from '../../common/sensors/sensors.middleware';
+import FlowerThumbnail from '../flower-thumbnail/flower-thumbnail';
 
 class Sensors extends Component {
   constructor(props) {
     super(props);
-
     this.activeSensors = [];
     this.connected = true;
   }
@@ -15,7 +14,7 @@ class Sensors extends Component {
   componentDidMount() {
     this.props.fetchSensors();
   }
-  sensorErr;
+
   validateSensors = sensors => {
     return sensors.every(
       sensor =>
@@ -43,6 +42,11 @@ class Sensors extends Component {
   }
 
   render() {
+    this.props.globalConnected.length = 0;
+    if (!this.validateSensors(this.props.sensors)) {
+      this.props.globalConnected.push('Not connected');
+    }
+
     const { issues } = this.props;
 
     const {
@@ -76,7 +80,7 @@ class Sensors extends Component {
         if (parseFloat(temperature) + delta < airTemperature) {
           issues.push({ id: _id, problematic: true });
         }
-        if (parseFloat(soilMoisture["Sensor data"]) + delta < soilHumidity) {
+        if (parseFloat(soilMoisture['Sensor data']) + delta < soilHumidity) {
           issues.push({ id: _id, problematic: true });
         }
         if (parseFloat(active.pack.sensors.light) + delta < light) {
@@ -87,11 +91,11 @@ class Sensors extends Component {
         const [currentFlower] = issues.filter(id => id.id === _id);
 
         return (
-          <div className="dashboard--thumbnail__item">
+          <div className='dashboard--thumbnail__item'>
             <FlowerThumbnail
               name={name}
               type={type}
-              soilMoisture={soilMoisture["Sensor data"]}
+              soilMoisture={soilMoisture['Sensor data']}
               airTemperature={temperature}
               airHumidity={humidity}
               ambientLight={temperature}
@@ -106,7 +110,7 @@ class Sensors extends Component {
     }
 
     return (
-      <div className="dashboard--thumbnail__item">
+      <div className='dashboard--thumbnail__item'>
         <FlowerThumbnail
           name={name}
           type={type}
