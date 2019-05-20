@@ -10,7 +10,11 @@ ChartModel.prototype.init = function(opts) {
 };
 
 ChartModel.prototype.clear = function() {
-  this.svg.remove();
+  try {
+    this.svg.remove();
+  } catch (err) {
+    return false;
+  }
 };
 
 ChartModel.prototype.draw = function() {
